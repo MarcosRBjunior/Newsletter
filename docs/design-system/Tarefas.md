@@ -29,9 +29,9 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [x] Testar localmente com `vercel dev`.
 
 ## 5. Modelo de e-mail
-- [ ] Criar `email/template.html` com a marcação do modelo (tabelas, estilos inline, 600px).
-- [ ] Personalizar o template para corresponder à marca (`EmailTemplate`).
-- [ ] Incluir merge tags obrigatórias (`*|UNSUB|*`, `*|LIST:ADDRESS|*`).
+- [x] Criar `email/template.html` com a marcação do modelo (tabelas, estilos inline, 600px).
+- [x] Personalizar o template para corresponder à marca (`EmailTemplate`).
+- [x] Incluir merge tags obrigatórias (`*|UNSUB|*`, `*|LIST:ADDRESS|*`).
 - [ ] Importar no Mailchimp como template e enviar um teste para Gmail e Outlook.
 
 ## 6. Entrega
