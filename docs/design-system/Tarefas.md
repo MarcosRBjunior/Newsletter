@@ -23,9 +23,9 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [x] Implementar os estados Enviando / Erro / Sucesso no `SubscribeForm`.
 
 ## 4. Serverless (Vercel)
-- [ ] Criar `api/subscribe.ts` que valida o e-mail e chama `POST /3.0/lists/{id}/members`.
-- [ ] Configurar `MAILCHIMP_API_KEY`, `MAILCHIMP_SERVER_PREFIX` e `MAILCHIMP_LIST_ID` na Vercel.
-- [ ] Mapear respostas ("Member Exists", "Invalid Resource") para as mensagens do formulário.
+- [x] Criar `api/subscribe.ts` que valida o e-mail e chama `POST /3.0/lists/{id}/members`.
+- [x] Configurar `MAILCHIMP_API_KEY`, `MAILCHIMP_SERVER_PREFIX` e `MAILCHIMP_LIST_ID` na Vercel.
+- [x] Mapear respostas ("Member Exists", "Invalid Resource") para as mensagens do formulário.
 - [ ] Testar localmente com `vercel dev`.
 
 ## 5. Modelo de e-mail
