@@ -38,9 +38,20 @@ function redact(text = '') {
   return text.replace(/\S+@\S+/g, '<email>')
 }
 
-function mailchimpFailure(error: MailchimpError, status: number) {
+// Erros da API vêm em JSON; um bloqueio de firewall na frente dela vem em HTML, então guarda o começo do texto.
+async function readError(res: Response): Promise<MailchimpError> {
+  const text = await res.text().catch(() => '')
+  try {
+    return JSON.parse(text) as MailchimpError
+  } catch {
+    return { detail: text.slice(0, 300) }
+  }
+}
+
+function mailchimpFailure(res: Response, error: MailchimpError) {
   const detail = error.detail ?? ''
-  console.warn('Mailchimp rejected signup', status, error.title, redact(detail))
+  const host = res.url ? new URL(res.url).host : ''
+  console.warn('Mailchimp rejected signup', res.status, host, error.title, redact(detail))
 
   if (error.title === 'Invalid Resource') {
     // O mesmo título cobre e-mail falso, excesso de inscrições recentes e merge fields obrigatórios.
@@ -99,9 +110,9 @@ export async function POST(request: Request) {
       return reply(200, true, MESSAGES.success)
     }
 
-    const error = (await created.json().catch(() => ({}))) as MailchimpError
+    const error = await readError(created)
     if (error.title !== 'Member Exists') {
-      return mailchimpFailure(error, created.status)
+      return mailchimpFailure(created, error)
     }
 
     // Já existe na audiência: só quem confirmou está de fato inscrito.
@@ -116,7 +127,7 @@ export async function POST(request: Request) {
     if (resent.ok) {
       return reply(200, true, MESSAGES.success)
     }
-    return mailchimpFailure((await resent.json().catch(() => ({}))) as MailchimpError, resent.status)
+    return mailchimpFailure(resent, await readError(resent))
   } catch (err) {
     console.error('Mailchimp request failed', err instanceof Error ? err.name : err)
     return reply(502, false, MESSAGES.generic)
