@@ -1,5 +1,5 @@
 import type { Issue } from '../data/issues'
-import type { SubscribeResult } from '../lib/subscribe'
+import type { Subscribe } from '../lib/subscribe'
 import { ButtonLink } from './Button'
 import { Eyebrow } from './Eyebrow'
 import { SubscribeForm } from './SubscribeForm'
@@ -7,7 +7,7 @@ import { SubscribeForm } from './SubscribeForm'
 interface HeroProps {
   issue: Issue
   nextIssueDate: string
-  onSubscribe: (email: string) => Promise<SubscribeResult>
+  onSubscribe: Subscribe
 }
 
 export function Hero({ issue, nextIssueDate, onSubscribe }: HeroProps) {

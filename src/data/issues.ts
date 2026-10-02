@@ -55,7 +55,7 @@ export const ISSUES: Issue[] = [
     date: 'Aug 31, 2026',
     title: 'The Return of the Company Town',
     excerpt:
-      "Silicon Valley's campus campuses have evolved into something far more ambitious — and far more troubling.",
+      "Silicon Valley's campuses have evolved into something far more ambitious — and far more troubling.",
     category: 'Labour',
     readTime: '11 min',
     featured: false,
@@ -104,5 +104,8 @@ export const ARCHIVE: ArchiveItem[] = [
 ]
 
 export const FEATURED_ISSUE = ISSUES.find((issue) => issue.featured) ?? ISSUES[0]
+
+// Edições são numeradas em sequência; a mais recente dá o total publicado.
+export const ISSUE_COUNT = Math.max(...ISSUES.map((issue) => Number(issue.id)))
 
 export const NEXT_ISSUE_DATE = 'Oct 12, 2026'

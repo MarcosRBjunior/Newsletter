@@ -12,7 +12,7 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [x] Criar conta no Mailchimp (Nível 1).
 - [x] Criar a audiência / newsletter list e anotar o List ID.
 - [x] Gerar a API key e o server prefix.
-- [x] Ativar double opt-in e personalizar o e-mail de confirmação com as cores da marca.
+- [ ] Ativar double opt-in e personalizar o e-mail de confirmação com as cores da marca. (double opt-in ativo; cores pendentes)
 
 ## 3. Front-end
 - [x] Separar `App.tsx` em componentes (`Masthead`, `Hero`, `SubscribeForm`, `CategoryFilter`, `IssueCard`, `ArchiveRow`, `CategoryBadge`, `About`, `Footer`).
@@ -26,7 +26,7 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [x] Criar `api/subscribe.ts` que valida o e-mail e chama `POST /3.0/lists/{id}/members`.
 - [x] Configurar `MAILCHIMP_API_KEY`, `MAILCHIMP_SERVER_PREFIX` e `MAILCHIMP_LIST_ID` na Vercel.
 - [x] Mapear respostas ("Member Exists", "Invalid Resource") para as mensagens do formulário.
-- [ ] Testar localmente com `vercel dev`.
+- [x] Testar localmente com `vercel dev`.
 
 ## 5. Modelo de e-mail
 - [ ] Criar `email/template.html` com a marcação do modelo (tabelas, estilos inline, 600px).

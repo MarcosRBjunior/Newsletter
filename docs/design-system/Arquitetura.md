@@ -19,7 +19,7 @@ Projeto 05 — Newsletter (Portfólio Boost Program, nível básico, full-stack)
                                                       ▼
                      Vercel Serverless Function (api/subscribe.ts)
                        • valida o e-mail
-                       • lê MAILCHIMP_API_KEY, MAILCHIMP_SERVER_PREFIX, MAILCHIMP_LIST_ID (env)
+                       • lê MAILCHIMP_API_KEY e MAILCHIMP_LIST_ID (env)
                        • chama a Mailchimp Marketing API v3
                                                       ▼
                      Mailchimp  POST /3.0/lists/{list_id}/members
@@ -63,15 +63,15 @@ Projeto 05 — Newsletter (Portfólio Boost Program, nível básico, full-stack)
 1. Usuário digita o e-mail → `SubscribeForm` valida (`type="email"`, `required`).
 2. Estado **Enviando**: botão desabilitado.
 3. `POST /api/subscribe` → função chama `lists/{id}/members` com `status: "pending"`.
-4. Respostas: `200` → **Sucesso** ("You're on the list."); `400 Member Exists` → mensagem "You're already on the list."; `400 Invalid Resource` → "Enter a valid email address."; outros → erro genérico.
-5. Mailchimp envia o e-mail de confirmação (double opt-in).
+4. Respostas: `200` → **Sucesso** ("You're on the list."); `400 Member Exists` → se o contato já está `subscribed`, "You're already on the list."; se está pendente ou descadastrado, `PUT /members/{hash}` com `status: "pending"` reenvia a confirmação (Sucesso); `400 Invalid Resource` → "Enter a valid email address." (e-mail falso) ou "Too many signups…" (excesso de inscrições recentes); outros → erro genérico, com o detalhe no log (sem o e-mail).
+5. Proteções: e-mail com até 254 caracteres, `Content-Type: application/json` obrigatório (bloqueia chamadas de outros sites), honeypot `website`, timeout de 8 s no Mailchimp e cabeçalhos de segurança (CSP etc.) no `vercel.json`.
+6. Mailchimp envia o e-mail de confirmação (double opt-in).
 
 ## Variáveis de ambiente (Vercel)
 
 | Nome | Exemplo |
 |---|---|
 | `MAILCHIMP_API_KEY` | `xxxxxxxx-us21` |
-| `MAILCHIMP_SERVER_PREFIX` | `us21` |
 | `MAILCHIMP_LIST_ID` | ID da audiência |
 
-Nenhuma delas leva o prefixo `VITE_` — assim o Vite não as expõe ao cliente.
+O server prefix (`us21`) é o sufixo da própria API key, então não é uma variável à parte. Nenhuma delas leva o prefixo `VITE_` — assim o Vite não as expõe ao cliente.

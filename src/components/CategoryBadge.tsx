@@ -1,3 +1,5 @@
+import type { Category } from '../data/issues'
+
 type Variant = 'hot' | 'ink' | 'warm'
 
 const VARIANTS: Record<Variant, string> = {
@@ -6,8 +8,8 @@ const VARIANTS: Record<Variant, string> = {
   warm: 'bg-warm text-ink border border-rule',
 }
 
-// Só três variantes; categoria nova cai em warm.
-const CATEGORY_VARIANTS: Record<string, Variant> = {
+// Só três variantes; o tipo obriga toda categoria a ter uma (categoria nova: use warm).
+const CATEGORY_VARIANTS: Record<Category, Variant> = {
   Technology: 'hot',
   Politics: 'hot',
   Urbanism: 'ink',
@@ -17,10 +19,9 @@ const CATEGORY_VARIANTS: Record<string, Variant> = {
   Climate: 'warm',
 }
 
-export function CategoryBadge({ cat }: { cat: string }) {
-  const variant = CATEGORY_VARIANTS[cat] ?? 'warm'
+export function CategoryBadge({ cat }: { cat: Category }) {
   return (
-    <span className={`inline-block px-2 py-0.5 font-mono text-badge uppercase ${VARIANTS[variant]}`}>
+    <span className={`inline-block px-2 py-0.5 font-mono text-badge uppercase ${VARIANTS[CATEGORY_VARIANTS[cat]]}`}>
       {cat}
     </span>
   )

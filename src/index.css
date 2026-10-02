@@ -1,5 +1,5 @@
 /* Fontes antes do Tailwind: Fraunces (títulos), Work Sans (texto), DM Mono (rótulos). */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Work+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 
 /* Tokens de docs/design-system/tokens.json */
@@ -76,9 +76,14 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--color-ink) var(--color-paper);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

@@ -3,7 +3,7 @@ import { CategoryBadge } from './CategoryBadge'
 
 export function ArchiveRow({ item }: { item: ArchiveItem }) {
   return (
-    <li className="group flex cursor-pointer items-start gap-6 border-b border-ink-15 py-4 transition-colors last:border-b-0 hover:text-hot">
+    <li className="group flex items-start gap-6 border-b border-ink-15 py-4 transition-colors last:border-b-0 hover:text-hot">
       <span className="mt-0.5 shrink-0 font-mono text-nav text-ink-30 transition-colors group-hover:text-hot">
         #{item.id}
       </span>

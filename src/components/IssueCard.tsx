@@ -3,7 +3,7 @@ import { CategoryBadge } from './CategoryBadge'
 
 export function IssueCard({ issue }: { issue: Issue }) {
   return (
-    <article className="group flex cursor-pointer flex-col gap-4 border-r-2 border-b-2 border-rule p-6 transition-colors hover:bg-warm">
+    <article className="group flex flex-col gap-4 border-r-2 border-b-2 border-rule p-6 transition-colors hover:bg-warm">
       <div className="flex items-center justify-between">
         <CategoryBadge cat={issue.category} />
         <span className="font-mono text-meta tracking-widest text-ink-40">#{issue.id}</span>
