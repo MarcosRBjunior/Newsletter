@@ -1,12 +1,30 @@
-// Página provisória para validar Tailwind + tokens; as seções chegam na etapa 3 (Front-end).
+import { About } from './components/About'
+import { Archive } from './components/Archive'
+import { Footer } from './components/Footer'
+import { Hero } from './components/Hero'
+import { Issues } from './components/Issues'
+import { Masthead } from './components/Masthead'
+import type { NavLink } from './components/Masthead'
+import { ARCHIVE, CATEGORIES, FEATURED_ISSUE, ISSUES, NEXT_ISSUE_DATE } from './data/issues'
+import { subscribe } from './lib/subscribe'
+
+const NAV_LINKS: NavLink[] = [
+  { href: '#issues', label: 'Issues' },
+  { href: '#archive', label: 'Archive' },
+  { href: '#about', label: 'About' },
+]
+
 export default function App() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-14">
-      <p className="font-mono text-eyebrow uppercase text-hot">Est. 2023 · Fortnightly</p>
-      <h1 className="font-display text-masthead font-black uppercase border-b-4 border-rule pb-4">
-        The Long View
-      </h1>
-      <p className="mt-6 max-w-2xl text-lede text-ink-70">Read the ideas that don't fit in a feed.</p>
-    </main>
+    <>
+      <Masthead links={NAV_LINKS} />
+      <main>
+        <Hero issue={FEATURED_ISSUE} nextIssueDate={NEXT_ISSUE_DATE} onSubscribe={subscribe} />
+        <Issues issues={ISSUES} categories={CATEGORIES} />
+        <Archive items={ARCHIVE} />
+        <About />
+      </main>
+      <Footer links={NAV_LINKS} />
+    </>
   )
 }

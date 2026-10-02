@@ -89,6 +89,12 @@
     @apply bg-hot text-on-hot;
   }
 
+  /* Foco: contorno hot de stroke-mid (o input usa a própria borda) */
+  :focus-visible {
+    outline: 2px solid var(--color-hot);
+    outline-offset: 2px;
+  }
+
   ::-webkit-scrollbar {
     width: 4px;
     height: 4px;

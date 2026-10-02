@@ -9,18 +9,18 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [ ] Criar o repositório no GitHub e conectar à Vercel. (GitHub feito: MarcosRBjunior/Newsletter; Vercel no final)
 
 ## 2. Mailchimp
-- [ ] Criar conta no Mailchimp (Nível 1).
-- [ ] Criar a audiência / newsletter list e anotar o List ID.
-- [ ] Gerar a API key e o server prefix.
-- [ ] Ativar double opt-in e personalizar o e-mail de confirmação com as cores da marca.
+- [x] Criar conta no Mailchimp (Nível 1).
+- [x] Criar a audiência / newsletter list e anotar o List ID.
+- [x] Gerar a API key e o server prefix.
+- [x] Ativar double opt-in e personalizar o e-mail de confirmação com as cores da marca.
 
 ## 3. Front-end
-- [ ] Separar `App.tsx` em componentes (`Masthead`, `Hero`, `SubscribeForm`, `CategoryFilter`, `IssueCard`, `ArchiveRow`, `CategoryBadge`, `About`, `Footer`).
-- [ ] Mover `ISSUES`, `ARCHIVE` e `CATEGORIES` para `src/data/issues.ts`.
-- [ ] Trocar cores literais (`#E8150A`…) pelas utilidades do tema (`bg-hot`, `text-ink`…).
-- [ ] Criar a marcação do formulário de inscrição e estilizá-la com Tailwind (Nível 2).
-- [ ] Adicionar o formulário à página principal (`#subscribe`).
-- [ ] Implementar os estados Enviando / Erro / Sucesso no `SubscribeForm`.
+- [x] Separar `App.tsx` em componentes (`Masthead`, `Hero`, `SubscribeForm`, `CategoryFilter`, `IssueCard`, `ArchiveRow`, `CategoryBadge`, `About`, `Footer`).
+- [x] Mover `ISSUES`, `ARCHIVE` e `CATEGORIES` para `src/data/issues.ts`.
+- [x] Trocar cores literais (`#E8150A`…) pelas utilidades do tema (`bg-hot`, `text-ink`…).
+- [x] Criar a marcação do formulário de inscrição e estilizá-la com Tailwind (Nível 2).
+- [x] Adicionar o formulário à página principal (`#subscribe`).
+- [x] Implementar os estados Enviando / Erro / Sucesso no `SubscribeForm`.
 
 ## 4. Serverless (Vercel)
 - [ ] Criar `api/subscribe.ts` que valida o e-mail e chama `POST /3.0/lists/{id}/members`.
