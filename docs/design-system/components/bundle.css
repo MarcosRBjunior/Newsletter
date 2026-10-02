@@ -1,0 +1,103 @@
+/* The Long View — estilos dos componentes. Recriados de src/App.tsx (Tailwind) sobre os tokens. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Work+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+::selection { background: var(--hot); color: var(--on-hot); }
+.lv-root * { box-sizing: border-box; }
+
+/* Eyebrow */
+.lv-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--hot); margin: 0; }
+.lv-eyebrow--muted { color: var(--ink-40); }
+
+/* Button */
+.lv-btn { display: inline-flex; align-items: center; gap: var(--space-2); border: 0; border-radius: 0; cursor: pointer; text-decoration: none;
+  font-family: var(--font-mono); font-size: 12px; line-height: 16px; letter-spacing: .1em; text-transform: uppercase;
+  padding: var(--space-3) var(--space-6); transition: background-color .15s, color .15s; }
+.lv-btn--ink { background: var(--ink); color: var(--paper); }
+.lv-btn--ink:hover, .lv-btn--ink.is-hover { background: var(--hot); color: var(--on-hot); }
+.lv-btn--hot { background: var(--hot); color: var(--on-hot); }
+.lv-btn--hot:hover, .lv-btn--hot.is-hover { background: var(--hot-press); }
+.lv-btn--sm { padding: 10px var(--space-5); }
+.lv-btn--nav { padding: var(--space-2) var(--space-4); font-size: 11px; }
+.lv-btn:focus-visible { outline: var(--stroke-mid) solid var(--hot); outline-offset: 2px; }
+.lv-btn .arrow { font-size: 16px; line-height: 1; }
+.lv-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: .025em; color: var(--ink-50); text-decoration: underline; text-underline-offset: 2px; }
+.lv-link:hover, .lv-link.is-hover { color: var(--hot); }
+
+/* Badge */
+.lv-badge { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  padding: var(--space-0_5) var(--space-2); line-height: 15px; }
+.lv-badge--hot { background: var(--hot); color: var(--on-hot); }
+.lv-badge--ink { background: var(--ink); color: var(--paper); }
+.lv-badge--warm { background: var(--warm); color: var(--ink); border: var(--stroke-hair) solid var(--ink); }
+
+/* Masthead */
+.lv-masthead { border-bottom: var(--stroke-heavy) solid var(--rule); background: var(--paper); }
+.lv-masthead__in { max-width: var(--container-max); margin: 0 auto; padding: var(--space-4) var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.lv-masthead__kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-50); margin-bottom: 2px; }
+.lv-masthead__name { font-family: var(--font-display); font-weight: 900; font-size: 30px; line-height: 1; letter-spacing: -.025em; margin: 0; }
+.lv-nav { display: flex; align-items: center; gap: var(--space-6); font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.lv-nav a { color: var(--ink); text-decoration: none; }
+.lv-nav a:hover, .lv-nav a.is-hover { color: var(--hot); }
+
+/* Category filter */
+.lv-tabs { display: flex; overflow-x: auto; border-bottom: var(--stroke-mid) solid var(--rule); }
+.lv-tab { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; background: transparent; color: var(--ink);
+  border: 0; border-right: var(--stroke-hair) solid var(--rule); padding: var(--space-4) var(--space-5); cursor: pointer; }
+.lv-tab:hover, .lv-tab.is-hover { background: var(--warm); }
+.lv-tab[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* Issue card + grid */
+.lv-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: var(--stroke-mid) solid var(--rule); border-left: var(--stroke-mid) solid var(--rule); }
+.lv-card { border-right: var(--stroke-mid) solid var(--rule); border-bottom: var(--stroke-mid) solid var(--rule); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); cursor: pointer; background: var(--paper); transition: background-color .15s; }
+.lv-card:hover, .lv-card.is-hover { background: var(--warm); }
+.lv-card__top { display: flex; align-items: center; justify-content: space-between; }
+.lv-card__num, .lv-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: .025em; color: var(--ink-40); }
+.lv-card__num { letter-spacing: .1em; }
+.lv-card__title { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.25; margin: 0; transition: color .15s; }
+.lv-card:hover .lv-card__title, .lv-card.is-hover .lv-card__title { color: var(--hot); }
+.lv-card__excerpt { font-size: 14px; line-height: 1.625; color: var(--ink-60); margin: 0; flex: 1; }
+.lv-card__foot { display: flex; justify-content: space-between; padding-top: var(--space-2); border-top: var(--stroke-hair) solid var(--ink-10); }
+
+/* Archive row */
+.lv-archive { border-left: var(--stroke-mid) solid var(--rule); padding-left: var(--space-8); }
+.lv-row { display: flex; align-items: flex-start; gap: var(--space-6); padding: var(--space-4) 0; border-bottom: var(--stroke-hair) solid var(--ink-15); cursor: pointer; }
+.lv-row:last-child { border-bottom: 0; }
+.lv-row__num { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-30); margin-top: 2px; flex-shrink: 0; }
+.lv-row__body { flex: 1; min-width: 0; }
+.lv-row__title { font-family: var(--font-display); font-weight: 600; font-size: 16px; line-height: 1.375; margin: 0; }
+.lv-row__meta { display: flex; align-items: center; gap: var(--space-3); margin-top: 4px; }
+.lv-row__arrow { color: var(--ink-20); flex-shrink: 0; }
+.lv-row:hover, .lv-row.is-hover, .lv-row:hover .lv-row__num, .lv-row.is-hover .lv-row__num, .lv-row:hover .lv-row__arrow, .lv-row.is-hover .lv-row__arrow { color: var(--hot); }
+
+/* Subscribe panel */
+.lv-subscribe { background: var(--ink); color: var(--paper); padding: var(--space-14) var(--space-6); display: flex; flex-direction: column; justify-content: center; }
+.lv-subscribe__title { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1.25; margin: 0 0 var(--space-4); }
+.lv-subscribe__text { font-size: 14px; line-height: 1.625; color: var(--paper-60); margin: 0 0 var(--space-8); }
+.lv-form { display: flex; flex-direction: column; gap: var(--space-3); }
+.lv-input { background: transparent; border: var(--stroke-mid) solid var(--paper-30); border-radius: 0; outline: none; padding: var(--space-3) var(--space-4);
+  color: var(--paper); font-family: var(--font-mono); font-size: 14px; transition: border-color .15s; width: 100%; }
+.lv-input::placeholder { color: var(--paper-30); }
+.lv-input:focus, .lv-input.is-focus { border-color: var(--hot); }
+.lv-input[aria-invalid="true"] { border-color: var(--hot); }
+.lv-form__error { font-family: var(--font-mono); font-size: 11px; color: var(--paper); margin: 0; }
+.lv-form__error::before { content: "× "; color: var(--hot); }
+.lv-subscribe__fine { margin: var(--space-4) 0 0; font-family: var(--font-mono); font-size: 10px; letter-spacing: .025em; color: var(--paper-30); }
+.lv-success { border: var(--stroke-mid) solid var(--hot); padding: var(--space-5); }
+.lv-success__title { font-family: var(--font-display); font-weight: 700; font-size: 20px; margin: 0; }
+.lv-success__text { font-family: var(--font-mono); font-size: 14px; color: var(--paper-60); margin: 4px 0 0; }
+
+/* Footer */
+.lv-footer { max-width: var(--container-max); margin: 0 auto; padding: var(--space-8) var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+.lv-footer__name { font-family: var(--font-display); font-weight: 900; font-size: 18px; margin: 0; }
+.lv-footer .lv-nav a { color: var(--ink-50); }
+
+/* E-mail template (wireframe do Projeto 05) */
+.lv-email { max-width: 600px; margin: 0 auto; background: var(--paper); border: var(--stroke-heavy) solid var(--rule); }
+.lv-email__head { border-bottom: var(--stroke-heavy) solid var(--rule); padding: var(--space-6); text-align: center; }
+.lv-email__block { padding: var(--space-8) var(--space-6) 0; text-align: center; }
+.lv-email__title { font-family: var(--font-display); font-weight: 900; font-size: 28px; line-height: 1.15; margin: var(--space-3) 0; }
+.lv-email__body { font-size: 15px; line-height: 1.625; color: var(--ink-70); margin: 0 0 var(--space-6); }
+.lv-email__img { height: 180px; border: var(--stroke-mid) solid var(--rule); background: var(--warm); display: flex; align-items: center; justify-content: center; }
+.lv-email__foot { margin-top: var(--space-8); border-top: var(--stroke-heavy) solid var(--rule); background: var(--ink); color: var(--paper); padding: var(--space-6); display: flex; gap: var(--space-3); }
+.lv-email__foot .lv-input { flex: 1; }

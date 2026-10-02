@@ -1,0 +1,31 @@
+<!-- @dsCard group="Forms" height=440 -->
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>SubscribeForm</title>
+<style>body{padding:24px;} .lv-stack{display:flex;flex-direction:column;gap:16px;} .lv-r{display:flex;flex-wrap:wrap;gap:16px;align-items:center;} .cap{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);margin:0 0 6px;}</style>
+</head>
+<body class="lv-root">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:-24px">
+<section class="lv-subscribe">
+ <p class="lv-eyebrow" style="margin-bottom:20px">Free · Fortnightly · No ads</p>
+ <h3 class="lv-subscribe__title">Read the ideas that don't fit in a feed.</h3>
+ <p class="lv-subscribe__text">Deeply reported essays on cities, labour, technology, and the slow forces shaping the world.</p>
+ <form class="lv-form" onsubmit="return false">
+  <input class="lv-input is-focus" type="email" placeholder="your@email.com" aria-label="E-mail">
+  <button class="lv-btn lv-btn--hot" style="justify-content:center">Subscribe — It's Free</button>
+ </form>
+ <p class="lv-subscribe__fine">4,800+ readers · Unsubscribe any time</p>
+</section>
+<section class="lv-subscribe">
+ <p class="cap" style="color:var(--paper-60)">Erro (Mailchimp)</p>
+ <form class="lv-form" onsubmit="return false">
+  <input class="lv-input" type="email" value="marcos@exemplo" aria-invalid="true" aria-label="E-mail">
+  <p class="lv-form__error">Enter a valid email address.</p>
+  <button class="lv-btn lv-btn--hot" style="justify-content:center">Subscribe — It's Free</button>
+ </form>
+ <p class="cap" style="color:var(--paper-60);margin-top:24px">Sucesso</p>
+ <div class="lv-success"><p class="lv-success__title">You're on the list.</p><p class="lv-success__text">Next issue arrives Oct 12, 2026.</p></div>
+</section>
+</div>
+</body>
+</html>

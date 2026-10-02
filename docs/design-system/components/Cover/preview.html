@@ -1,0 +1,51 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>The Long View</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=Work+Sans:wght@400&display=swap">
+<style>
+  html, body { margin:0; height:100%; padding:0; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; }
+  .art svg { display:block; width:480px; height:288px; }
+  .ink { fill:var(--ink); }
+  .hot { fill:var(--hot); }
+  .warm { fill:var(--warm); }
+  .blk { rx:var(--radius-none); }
+  .r-heavy { stroke:var(--rule); stroke-width:var(--stroke-heavy); }
+  .r-mid { stroke:var(--rule); stroke-width:var(--stroke-mid); }
+  .r-cut { stroke:var(--paper); stroke-width:var(--stroke-heavy); }
+  .words { position:absolute; left:var(--space-8); bottom:var(--space-8); max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-weight:900; font-size:96px; line-height:.95; letter-spacing:-.025em; color:var(--ink); }
+  .tag { margin:var(--space-3) 0 0 2px; font-size:14px; line-height:20px; color:var(--ink-70); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      ink 192×288 slab bleeding top/bottom/right (the brand is ink on paper) · warm 168×240 bleeding the bottom (the relief tint) · hot 96×144 bleeding the top, once (the single accent) — ≈40% of 960×288
+  arrangement a flush newspaper column grid: three columns butted edge to edge, like the borderless issue grid
+  pattern     rules, from "Réguas, não sombras": a stroke-heavy masthead rule across warm and hot, one stroke-mid column rule, one stroke-heavy rule cut in paper across the ink slab
+  scales      column widths in space-6 multiples (168 = 7×, 96 = 4×, 192 = 8×); rules stroke-heavy / stroke-mid; corners radius-none
+-->
+<rect class="warm blk" x="0" y="48" width="168" height="240"/>
+<rect class="hot blk" x="168" y="0" width="96" height="144"/>
+<rect class="ink blk" x="288" y="0" width="192" height="288"/>
+<line class="r-heavy" x1="0" y1="48" x2="288" y2="48"/>
+<line class="r-mid" x1="0" y1="168" x2="168" y2="168"/>
+<line class="r-mid" x1="264" y1="144" x2="264" y2="288"/>
+<line class="r-cut" x1="288" y1="144" x2="480" y2="144"/>
+</svg>
+</div>
+<div class="words">
+  <h1 class="name">The Long View</h1>
+  <p class="tag">Read the ideas that don't fit in a feed.</p>
+</div>
+</div>
+</body>
+</html>
