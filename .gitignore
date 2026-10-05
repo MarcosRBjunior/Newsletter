@@ -24,8 +24,6 @@ dist-ssr
 *.sw?
 
 # Segredos (Mailchimp) e Vercel
-.env
-.env.*
+.env*
 !.env.example
 .vercel
-.env*
