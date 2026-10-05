@@ -59,7 +59,7 @@ The Long View é uma newsletter editorial quinzenal com cara de jornal impresso:
 
 ## Imagens e ícones
 
-- Uma única foto: o retrato do autor, quadrado, em **escala de cinza**, com moldura `stroke-heavy` e fundo `portrait` enquanto carrega.
+- Sem fotos na página. O About traz o texto do autor e, ao lado, um bloco "Built by" com quem fez o site, separado por régua `stroke-mid`. Os tokens `portrait` e `portrait-lg` ficam reservados caso um retrato volte (quadrado, em **escala de cinza**, moldura `stroke-heavy`).
 - Imagens de e-mail (template) recebem borda `stroke-mid`, sem arredondamento.
 - Não há biblioteca de ícones nem logotipo: a marca é o nome "THE LONG VIEW" composto em Fraunces 900. O único glifo é `→` (no texto, não SVG). Não adicione ícones.
 

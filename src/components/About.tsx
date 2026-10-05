@@ -1,20 +1,22 @@
 import { ButtonLink } from './Button'
 import { Eyebrow } from './Eyebrow'
 
+// Quem construiu o site (pessoa real), ao lado do autor fictício da newsletter.
+const BUILDER_FACTS = [
+  { label: 'Stack', value: 'Node.js · TypeScript · React · PostgreSQL' },
+  { label: 'Education', value: 'Computer Engineering, FHO' },
+  { label: 'Cloud', value: 'AWS Certified Cloud Practitioner' },
+]
+
+const BUILDER_LINKS = [
+  { label: 'GitHub', href: 'https://github.com/MarcosRBjunior' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/marcos-ribeirojr' },
+]
+
 export function About() {
   return (
     <section id="about" className="border-b-4 border-rule">
-      <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 py-16 md:grid-cols-[auto_1fr]">
-        <div className="size-32 shrink-0 overflow-hidden border-4 border-rule bg-portrait md:size-portrait-lg">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=352&h=352&fit=crop&auto=format"
-            alt="Marcus Webb, writer and editor"
-            width={352}
-            height={352}
-            loading="lazy"
-            className="size-full object-cover grayscale"
-          />
-        </div>
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 py-16 lg:grid-cols-[2fr_1fr]">
         <div>
           <Eyebrow className="mb-3">About</Eyebrow>
           <h2 className="mb-5 font-display text-display-section font-black">Written by Marcus Webb</h2>
@@ -45,6 +47,40 @@ export function About() {
             </a>
           </div>
         </div>
+        <aside aria-labelledby="builder-name" className="border-l-2 border-rule pl-8">
+          <Eyebrow className="mb-3">Built by</Eyebrow>
+          <h3 id="builder-name" className="font-display text-display-panel font-bold">
+            Marcos Ribeiro Jr.
+          </h3>
+          <p className="mt-1 font-mono text-nav uppercase text-ink-60">Backend Developer · Araras, SP</p>
+          <p className="mt-5 text-body-sm text-ink-70">
+            Backend developer building REST APIs with Node.js and TypeScript, covered by unit, integration and
+            end-to-end tests. Designed and built this site, from the design system to the Mailchimp sign-up running on
+            a Vercel Function.
+          </p>
+          <dl className="mt-6 border-t border-rule">
+            {BUILDER_FACTS.map((fact) => (
+              <div key={fact.label} className="border-b border-ink-15 py-3">
+                <dt className="font-mono text-meta uppercase text-ink-60">{fact.label}</dt>
+                <dd className="mt-0.5 text-body-sm text-ink">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-6 flex flex-wrap gap-6">
+            {BUILDER_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-nav uppercase text-ink transition-colors hover:text-hot"
+              >
+                {link.label}
+                <span aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        </aside>
       </div>
     </section>
   )
