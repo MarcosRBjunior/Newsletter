@@ -6,6 +6,17 @@ export function Footer({ links }: { links: NavLink[] }) {
       <div>
         <p className="font-display text-lg font-black">THE LONG VIEW</p>
         <p className="mt-0.5 font-mono text-meta text-ink-40">© 2026 Marcus Webb · All issues reserved</p>
+        <p className="mt-0.5 font-mono text-meta text-ink-40">
+          Site designed and built by{' '}
+          <a
+            href="https://github.com/MarcosRBjunior"
+            target="_blank"
+            rel="noreferrer"
+            className="text-ink-60 underline underline-offset-2 transition-colors hover:text-hot"
+          >
+            Marcos Ribeiro Jr.
+          </a>
+        </p>
       </div>
       <nav className="flex items-center gap-6 font-mono text-nav uppercase text-ink-60">
         {links.map((link) => (
