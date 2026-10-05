@@ -21,7 +21,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 .lv-btn--nav { padding: var(--space-2) var(--space-4); font-size: 11px; }
 .lv-btn:focus-visible { outline: var(--stroke-mid) solid var(--hot); outline-offset: 2px; }
 .lv-btn .arrow { font-size: 16px; line-height: 1; }
-.lv-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: .025em; color: var(--ink-50); text-decoration: underline; text-underline-offset: 2px; }
+.lv-link { font-family: var(--font-mono); font-size: 12px; letter-spacing: .025em; color: var(--ink-60); text-decoration: underline; text-underline-offset: 2px; }
 .lv-link:hover, .lv-link.is-hover { color: var(--hot); }
 
 /* Badge */
@@ -90,7 +90,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 /* Footer */
 .lv-footer { max-width: var(--container-max); margin: 0 auto; padding: var(--space-8) var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
 .lv-footer__name { font-family: var(--font-display); font-weight: 900; font-size: 18px; margin: 0; }
-.lv-footer .lv-nav a { color: var(--ink-50); }
+.lv-footer .lv-nav a { color: var(--ink-60); }
 
 /* E-mail template (wireframe do Projeto 05) */
 .lv-email { max-width: 600px; margin: 0 auto; background: var(--paper); border: var(--stroke-heavy) solid var(--rule); }

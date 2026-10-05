@@ -7,7 +7,7 @@ export function Footer({ links }: { links: NavLink[] }) {
         <p className="font-display text-lg font-black">THE LONG VIEW</p>
         <p className="mt-0.5 font-mono text-meta text-ink-40">© 2026 Marcus Webb · All issues reserved</p>
       </div>
-      <nav className="flex items-center gap-6 font-mono text-nav uppercase text-ink-50">
+      <nav className="flex items-center gap-6 font-mono text-nav uppercase text-ink-60">
         {links.map((link) => (
           <a key={link.href} href={link.href} className="transition-colors hover:text-hot">
             {link.label}

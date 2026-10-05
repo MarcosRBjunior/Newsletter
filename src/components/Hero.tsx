@@ -20,14 +20,15 @@ export function Hero({ issue, nextIssueDate, onSubscribe }: HeroProps) {
             <h2 className="mb-6 font-display text-display-hero-sm font-black lg:text-display-hero">{issue.title}</h2>
             <p className="max-w-md text-lede text-ink-70">{issue.excerpt}</p>
           </div>
-          <div className="mt-10 flex items-center gap-6">
+          {/* Em colunas estreitas (375px, hero de 768px) o metadado desce inteiro, sem partir a data. */}
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
             <ButtonLink href="#issues">
               Read Issue
               <span aria-hidden="true" className="text-base leading-none">
                 →
               </span>
             </ButtonLink>
-            <span className="font-mono text-nav tracking-wide text-ink-40">
+            <span className="whitespace-nowrap font-mono text-nav tracking-wide text-ink-40">
               {issue.readTime} read · {issue.date}
             </span>
           </div>

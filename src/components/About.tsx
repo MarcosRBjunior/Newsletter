@@ -39,7 +39,7 @@ export function About() {
             </ButtonLink>
             <a
               href="mailto:marcus@thelongview.email"
-              className="font-mono text-xs tracking-wide text-ink-50 underline underline-offset-2 transition-colors hover:text-hot"
+              className="font-mono text-xs tracking-wide text-ink-60 underline underline-offset-2 transition-colors hover:text-hot"
             >
               marcus@thelongview.email
             </a>
