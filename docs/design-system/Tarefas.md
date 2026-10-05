@@ -6,7 +6,7 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [x] Criar o projeto com `npm create vite@latest` (template React + TypeScript), conforme a documentação oficial do Vite.
 - [x] Instalar Tailwind CSS v4 (`tailwindcss` + `@tailwindcss/vite`) e registrar o plugin no `vite.config.ts`.
 - [x] Colocar os `@import` do Google Fonts e o bloco `@theme` (tokens deste sistema) em `src/index.css`.
-- [ ] Criar o repositório no GitHub e conectar à Vercel. (GitHub feito: MarcosRBjunior/Newsletter; Vercel no final)
+- [x] Criar o repositório no GitHub e conectar à Vercel.
 
 ## 2. Mailchimp
 - [x] Criar conta no Mailchimp (Nível 1).
@@ -35,6 +35,6 @@ Ordem sugerida, seguindo as etapas do PDF (Configurando o viteJS → Front-end �
 - [ ] Importar no Mailchimp como template e enviar um teste para Gmail e Outlook.
 
 ## 6. Entrega
-- [ ] Deploy na Vercel e teste de inscrição real ponta a ponta.
-- [ ] Revisar responsividade (375px, 768px, 1280px) e contraste.
-- [ ] README do repositório com prints, stack e link do deploy (portfólio).
+- [x] Deploy na Vercel e teste de inscrição real ponta a ponta.
+- [x] Revisar responsividade (375px, 768px, 1280px) e contraste.
+- [x] README do repositório com prints, stack e link do deploy (portfólio).
