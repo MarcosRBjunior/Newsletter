@@ -4,7 +4,7 @@ Landing page de uma newsletter editorial com inscrição real via Mailchimp. Pro
 
 **Deploy:** https://newsletter-five-steel.vercel.app
 
-> O autor "Marcus Webb" e as edições são conteúdo fictício, criado para o projeto. A inscrição funciona de verdade: o e-mail entra na audiência do Mailchimp e recebe a confirmação (double opt-in).
+> O autor "Marcus Webb" e as edições são conteúdo fictício, criado para o projeto. Já o bloco "Built by" da seção About e o crédito no rodapé são reais: falam de quem fez o site, [Marcos Ribeiro Jr.](https://github.com/MarcosRBjunior), com stack, formação e links para o GitHub e o [LinkedIn](https://www.linkedin.com/in/marcos-ribeirojr). A inscrição funciona de verdade: o e-mail entra na audiência do Mailchimp e recebe a confirmação (double opt-in).
 
 ![Página inicial no desktop](docs/screenshots/desktop.png)
 
@@ -24,7 +24,7 @@ Landing page de uma newsletter editorial com inscrição real via Mailchimp. Pro
 
 - **Formulário de inscrição** com estados de envio, erro e sucesso, e mensagens específicas para e-mail inválido, contato já inscrito e excesso de tentativas.
 - **Função serverless** (`api/subscribe.ts`) que chama a Mailchimp Marketing API. A API key fica só no servidor.
-- **Landing page completa:** cabeçalho, edição em destaque, grade de edições com filtro por categoria, arquivo, "sobre" e rodapé.
+- **Landing page completa:** cabeçalho, edição em destaque, grade de edições com filtro por categoria, arquivo, "sobre" (o autor fictício e, ao lado, quem fez o site) e rodapé com o crédito do site.
 - **Modelo de e-mail** (`email/template.html`) em tabelas com estilos inline, 600px, com as merge tags obrigatórias do Mailchimp.
 - **Design system** próprio, com tokens no `@theme` do Tailwind v4. As regras estão em [`docs/design-system`](docs/design-system/README.md).
 
