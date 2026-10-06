@@ -103,7 +103,3 @@ docs/design-system/       regras visuais, tokens, requisitos e tarefas
 - Revisado em 375px, 768px e 1280px, sem rolagem horizontal. A grade de edições passa de 1 para 2 e depois 3 colunas, e o menu do topo some abaixo de 768px.
 - Campo de e-mail com rótulo acessível, erro ligado ao campo por `aria-describedby`, foco visível em vermelho e sucesso anunciado ao leitor de tela.
 - Texto principal e de apoio passam de 4.5:1. Alguns metadados (datas, números de edição) ficam abaixo disso de propósito, como registrado nos [avisos de contraste do design system](docs/design-system/README.md#cor).
-
----
-
-Feito por [@MarcosRBjunior](https://github.com/MarcosRBjunior) no Portfólio Boost Program.
