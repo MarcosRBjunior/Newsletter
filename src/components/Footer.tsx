@@ -1,11 +1,13 @@
 import type { NavLink } from './Masthead'
 
+const CURRENT_YEAR = new Date().getFullYear()
+
 export function Footer({ links }: { links: NavLink[] }) {
   return (
     <footer className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-6 py-8 md:flex-row md:items-center">
       <div>
         <p className="font-display text-lg font-black">THE LONG VIEW</p>
-        <p className="mt-0.5 font-mono text-meta text-ink-40">© 2026 Marcus Webb · All issues reserved</p>
+        <p className="mt-0.5 font-mono text-meta text-ink-40">© {CURRENT_YEAR} Marcus Webb · All issues reserved</p>
         <p className="mt-0.5 font-mono text-meta text-ink-40">
           Site designed and built by{' '}
           <a

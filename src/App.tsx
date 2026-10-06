@@ -5,7 +5,7 @@ import { Hero } from './components/Hero'
 import { Issues } from './components/Issues'
 import { Masthead } from './components/Masthead'
 import type { NavLink } from './components/Masthead'
-import { ARCHIVE, CATEGORIES, FEATURED_ISSUE, ISSUE_COUNT, ISSUES, NEXT_ISSUE_DATE } from './data/issues'
+import { ARCHIVE, CATEGORIES, FEATURED_ISSUE, FOUNDED_YEAR, ISSUE_COUNT, ISSUES, NEXT_ISSUE_DATE } from './data/issues'
 import { subscribe } from './lib/subscribe'
 
 const NAV_LINKS: NavLink[] = [
@@ -17,7 +17,7 @@ const NAV_LINKS: NavLink[] = [
 export default function App() {
   return (
     <>
-      <Masthead links={NAV_LINKS} />
+      <Masthead links={NAV_LINKS} foundedYear={FOUNDED_YEAR} />
       <main>
         <Hero issue={FEATURED_ISSUE} nextIssueDate={NEXT_ISSUE_DATE} onSubscribe={subscribe} />
         <Issues issues={ISSUES} categories={CATEGORIES} />
